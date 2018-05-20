@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 const moment = require("moment-timezone");
+const _ = require("lodash");
 
 type Props = {
   till: Date
@@ -27,18 +28,16 @@ const CountDownTimer = class extends React.Component {
       const till = moment(this.props.till);
       const duration = moment.duration(till.diff(moment()));
 
-      const hours = new String(parseInt(duration.asHours())).padStart(2, "0");
-      const minutes = new String(parseInt(duration.asMinutes()) % 60).padStart(
-        2,
-        "0"
-      );
-      const seconds = new String(parseInt(duration.asSeconds()) % 60).padStart(
-        2,
-        "0"
-      );
+      const hours = new String(parseInt(duration.asHours()));
+      const minutes = new String(parseInt(duration.asMinutes()) % 60);
+      const seconds = new String(parseInt(duration.asSeconds()) % 60);
 
       this.setState({
-        time: `${hours}:${minutes}:${seconds}`
+        time: `${_.padStart(hours, 2, "0")}:${_.padStart(
+          minutes,
+          2,
+          "0"
+        )}:${_.padStart(seconds, 2, "0")}`
       });
     }, 1000);
 
