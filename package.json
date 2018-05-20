@@ -1,6 +1,6 @@
 {
   "name": "rn-countdown-clock",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A simple countdown clock for React Native",
   "main": "index.js",
   "scripts": {
