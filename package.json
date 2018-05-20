@@ -1,12 +1,16 @@
 {
   "name": "rn-countdown-clock",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple countdown clock for React Native",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["countdown", "react-native", "countdown clock"],
+  "keywords": [
+    "countdown",
+    "react-native",
+    "countdown clock"
+  ],
   "author": "Rajat Saxena <rajat@raynstudios.com> (http://raynstudios.com)",
   "license": "ISC",
   "dependencies": {
