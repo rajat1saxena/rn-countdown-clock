@@ -27,10 +27,18 @@ const CountDownTimer = class extends React.Component {
       const till = moment(this.props.till);
       const duration = moment.duration(till.diff(moment()));
 
+      const hours = new String(parseInt(duration.asHours())).padStart(2, "0");
+      const minutes = new String(parseInt(duration.asMinutes()) % 60).padStart(
+        2,
+        "0"
+      );
+      const seconds = new String(parseInt(duration.asSeconds()) % 60).padStart(
+        2,
+        "0"
+      );
+
       this.setState({
-        time: `${parseInt(duration.asHours())}:${parseInt(
-          duration.asMinutes()
-        ) % 60}:${parseInt(duration.asSeconds()) % 60}`
+        time: `${hours}:${minutes}:${seconds}`
       });
     }, 1000);
 
